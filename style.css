@@ -1,0 +1,518 @@
+```css
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080a09;
+    color: #f5f1e8;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1000px;
+
+    padding: 18px 30px;
+
+    background: rgba(15, 18, 17, 0.75);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 45px;
+
+    list-style: none;
+}
+
+nav a {
+    color: #f5f1e8;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #9eff00;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+header {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 60px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Background glow */
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #000000;
+
+    border-radius: 50%;
+
+    filter: blur(180px);
+
+    opacity: 0.08;
+
+    z-index: -1;
+}
+
+
+/* Small introduction text */
+
+header::after {
+    content: "DEVELOPER • DESIGNER • CREATOR";
+
+    position: absolute;
+
+    top: 150px;
+
+    font-size: 12px;
+    letter-spacing: 5px;
+
+    color: rgb(32, 15, 128);
+
+    opacity: 0.8;
+}
+
+
+/* Main heading */
+
+header h1 {
+    max-width: 900px;
+
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Highlight part of heading later */
+
+header h1 span {
+    color: #700e23;
+}
+
+
+/* Paragraph */
+
+header p {
+    max-width: 650px;
+
+    margin-bottom: 10px;
+
+    color: #a7aaa7;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   PROJECT BUTTON
+========================================= */
+
+button {
+    margin-top: 35px;
+
+    padding: 16px 34px;
+
+    border: 1px solid #9eff00;
+
+    border-radius: 50px;
+
+    background: #9eff00;
+
+    color: #080a09;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 40px rgba(158, 255, 0, 0.25);
+
+    background: transparent;
+
+    color: #9eff00;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        width: 94%;
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    header::after {
+        top: 120px;
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    button {
+        padding: 14px 28px;
+    }
+}
+
+/* =========================================
+   CUSTOM CURSOR
+========================================= */
+
+.cursor {
+    position: fixed;
+
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 9999;
+
+    transition:
+        width 0.2s ease,
+        height 0.2s ease,
+        background 0.2s ease;
+}
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+    width: 85%;
+    max-width: 1000px;
+
+    margin: 50px auto 120px;
+
+    padding: 60px;
+
+    border: 1px solid #222;
+
+    background: #050505;
+
+    transition: 0.4s ease;
+}
+
+.project-card:hover {
+    border-color: #555;
+
+    transform: translateY(-5px);
+}
+
+.project-number {
+    color: #555;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.project-card h2 {
+    font-size: clamp(35px, 6vw, 70px);
+
+    text-transform: uppercase;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.project-card > p {
+    max-width: 650px;
+
+    color: #999;
+
+    font-size: 17px;
+}
+
+
+
+.rating-section {
+    margin-top: 60px;
+
+    padding-top: 40px;
+
+    border-top: 1px solid #222;
+}
+
+.section-label {
+    color: #777;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.rating-stars {
+    display: flex;
+
+    gap: 12px;
+}
+
+.star {
+    font-size: 35px;
+
+    color: #333;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+.star.hovered {
+    color: #aaa;
+}
+
+.star.selected {
+    color: #fff;
+}
+
+#rating-message {
+    margin-top: 20px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+css
+
+.cursor {
+    position: fixed;
+
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid #fff;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 9999;
+
+    transition:
+        width 0.2s ease,
+        height 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.cursor-active {
+    width: 45px;
+    height: 45px;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ACTIVE NAVIGATION */
+
+nav a.active {
+    color: #999;
+}
+
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* PROJECT INTERACTION */
+
+.project-active {
+    transform: translateY(-8px);
+
+    border-color: #fff;
+}
+
+
+/* BUTTON INTERACTION */
+
+.button-hover {
+    transform: translateX(8px);
+}
+
+
+/* HERO MOUSE EFFECT */
+
+header h1 {
+    transform:
+        translate(
+            var(--mouse-x, 0),
+            var(--mouse-y, 0)
+        );
+
+    transition: transform 0.2s ease-out;
+}
+
+
+/* FORM MESSAGES */
+
+#form-message {
+    margin-top: 15px;
+
+    font-size: 14px;
+}
+
+#form-message.error {
+    color: #999;
+}
+
+#form-message.success {
+    color: #fff;
+}
+```
